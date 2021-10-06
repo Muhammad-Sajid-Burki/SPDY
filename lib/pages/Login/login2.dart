@@ -110,7 +110,7 @@ class _Login_2State extends State<Login_2> {
 
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: buttonPressColor()
+                          color: buttonPressBlueColor()
                       ),
                       child: Center(
                           child: Text(

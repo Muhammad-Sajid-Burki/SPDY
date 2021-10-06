@@ -11,7 +11,7 @@ class Current_1 extends StatefulWidget {
 
 class _Current_1State extends State<Current_1> {
 
-  bool selected = false;
+  bool _hasBeenPressed = false;
 
   double containerHeight = 0;
 
@@ -140,25 +140,8 @@ class _Current_1State extends State<Current_1> {
               ),
               GestureDetector(
                 onTap: (){
-                  selected = !selected;
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: Container(
-                      alignment: Alignment.bottomCenter,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
+                  _settingModalBottomSheet(context);
 
-                            width: MediaQuery.of(context).size.width,
-                            height: 60,
-                            color: Colors.white,
-                            child: Center(child: Text("Contact Support", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold, fontSize: 20),)),
-                          )
-                        ],
-                      ),
-                    ),
-                  );
                 },
 
                 child:
@@ -196,19 +179,200 @@ class _Current_1State extends State<Current_1> {
           )),
     );
   }
-  bottomMenu() {
-    return Positioned(
-      bottom: 0,
+  void _settingModalBottomSheet(context){
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc){
+          return Container(
+            // color: Colors.green,
+            height: 113,
+            child: Column(
+
+              children: <Widget>[
+                ListTile(
+                    title: Center(child: Text("Contact Support", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold, fontSize: 20))),
+                    onTap: () => {
+                      textDialog()
+                    }
+                ),
+                Container(
+                  height: 1,
+                  color: Colors.grey
+                ),
+                ListTile(
+                  tileColor: _hasBeenPressed ? buttonPressBlueColor(): Colors.white,
+                  title: Center(child: Text("Cancel Order", style: TextStyle(color: _hasBeenPressed ?Colors.white : buttonPressBlueColor() , fontWeight: FontWeight.bold, fontSize: 20))),
+                  onTap: () => {
+
+                      _hasBeenPressed = !_hasBeenPressed,
+
+                    dialog(),
+                  },
+                ),
+              ],
+            ),
+          );
+        }
+    );
+  }
+
+  void dialog() {
+    showDialog(
+      builder: (BuildContext context) {
+        return Dialog(
+          child: Container(
+            height: 250,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      "Are you sure?", textAlign: TextAlign.center,style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                    SizedBox(height: 10,),
+                    Text(
+                      "There will be penalty charges", textAlign: TextAlign.center,style: TextStyle(fontSize: 16, ),),
+
+                  ],
+                ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 35,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: buttonPressRedColor(),
+                        border: Border.all(color: buttonPressRedColor(), width: 2)
+                    ),
+                    child: Center(
+                        child: Text(
+                          "No, Keep my Order",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        )),
+                  ),
+                  SizedBox(height: 20,),
+
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 35,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: greenColor(),
+                        border: Border.all(color: greenColor(), width: 2)
+                    ),
+                    child: Center(
+                        child: Text(
+                          "Contact Provider",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        )),
+                  ),
+                ],
+              ),
+            ),
+
+              ],
+            ),
+          ),
+
+        );
+      },
+      context: context,
+    );
+  }
+
+  void textDialog () {
+    showDialog(
+        builder: (BuildContext context) {
+      return Dialog(
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4.0),
+        color: Colors.white,
+      ),
+      height: 380,
+      width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 60,
-            color: Colors.white,
-            child: Center(child: Text("Contact Support", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold, fontSize: 20),)),
-          )
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Please write your concerns below",
+            style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: 10, vertical: 20),
+            child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4.0),
+                      border: Border.all(color: Colors.grey)),
+                  child: Padding(
+                    padding:
+                    const EdgeInsets.only(top: 5, left: 15),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "Type Here...",
+                          border: InputBorder.none),
+                    ),
+                  ),
+                  height: 240,
+                  // width: MediaQuery.of(context).size.width,
+                ),
+                SizedBox(height: 20),
+                GestureDetector(
+                  onTap: () {
+
+                  },
+                  child: Center(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 35,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                          BorderRadius.circular(50.0),
+                          color: buttonPressBlueColor(),
+                          border: Border.all(
+                              color: buttonPressBlueColor(),
+                              width: 2)),
+                      child: Center(
+                          child: Text(
+                            "Send to Support",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
+                          )),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
+    ),
+
+          );
+        },
+      context: context,
     );
   }
 }
+

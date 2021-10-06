@@ -88,7 +88,7 @@ class _Menu_0State extends State<Menu_0> {
                       height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: buttonPressColor()),
+                          color: buttonPressBlueColor()),
                       child: Center(
                           child: Text(
                             "New Order",
@@ -102,14 +102,14 @@ class _Menu_0State extends State<Menu_0> {
                   SizedBox(height: 15,),
                   Icon(
                     Icons.menu,
-                    color: buttonPressColor(),
+                    color: buttonPressBlueColor(),
                     size: 50,
                   ),
 
                   Text(
                     "Menu",
                     style: TextStyle(
-                        color: buttonPressColor(),
+                        color: buttonPressBlueColor(),
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   )

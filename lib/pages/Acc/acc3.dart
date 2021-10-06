@@ -134,7 +134,7 @@ class _Acc_3State extends State<Acc_3> {
 
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: buttonPressColor()
+                          color: buttonPressBlueColor()
                       ),
                       child: Center(
                           child: Text(

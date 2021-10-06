@@ -186,7 +186,7 @@ class _Register_3State extends State<Register_3> {
                               height: 60,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50.0),
-                                  color: buttonPressColor()),
+                                  color: buttonPressBlueColor()),
                               child: Center(
                                   child: Text(
                                 "Login",

@@ -44,14 +44,14 @@ class _App_1State extends State<App_1> {
                           Text(
                             "Notification",
                             style: TextStyle(
-                                color: buttonPressColor(),
+                                color: buttonPressBlueColor(),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "Make changes to your Notification Settings.",
                             style: TextStyle(
-                              color: buttonPressColor(),
+                              color: buttonPressBlueColor(),
                               fontSize: 15,
                             ),
                           ),
@@ -75,14 +75,14 @@ class _App_1State extends State<App_1> {
                           Text(
                             "Set Default Map",
                             style: TextStyle(
-                                color: buttonPressColor(),
+                                color: buttonPressBlueColor(),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "Default Map: SPDY",
                             style: TextStyle(
-                              color: buttonPressColor(),
+                              color: buttonPressBlueColor(),
                               fontSize: 15,
                             ),
                           ),

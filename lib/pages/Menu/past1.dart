@@ -36,90 +36,90 @@ class _Past_1State extends State<Past_1> {
 
                     Card(
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(color: buttonPressColor(),width: 2),
+                          side: BorderSide(color: buttonPressBlueColor(),width: 2),
                           borderRadius: BorderRadius.circular(4.0)),
                       child: ListTile(
-                        title: Text("ABC Towning", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)),
-                        subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressColor())),
+                        title: Text("ABC Towning", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)),
+                        subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressBlueColor())),
                         trailing: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                            crossAxisAlignment: CrossAxisAlignment.end,
                            // space between two icons
                           children: <Widget>[
-                            Text("\$55.99", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)), // icon-1
-                            Text('Completed on 06/01/2021', style: TextStyle(color: buttonPressColor())),                              ],
+                            Text("\$55.99", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)), // icon-1
+                            Text('Completed on 06/01/2021', style: TextStyle(color: buttonPressBlueColor())),                              ],
                         ),
 
     ),
                     ),
                         Card(
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: buttonPressColor(),width: 2),
+                              side: BorderSide(color: buttonPressBlueColor(),width: 2),
                               borderRadius: BorderRadius.circular(4.0)),
                           child: ListTile(
-                            title: Text("XYZ Roadside", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)),
-                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressColor())),
+                            title: Text("XYZ Roadside", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)),
+                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressBlueColor())),
                             trailing: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               // space between two icons
                               children: <Widget>[
-                                Text("\$22.21", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)), // icon-1
-                                Text('Completed on 05/29/2021', style: TextStyle(color: buttonPressColor())),                              ],
+                                Text("\$22.21", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)), // icon-1
+                                Text('Completed on 05/29/2021', style: TextStyle(color: buttonPressBlueColor())),                              ],
                             ),
 
                           ),
                         ),
                         Card(
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: buttonPressColor(),width: 2),
+                              side: BorderSide(color: buttonPressBlueColor(),width: 2),
                               borderRadius: BorderRadius.circular(4.0)),
                           child: ListTile(
-                            title: Text("AAA Towning", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)),
-                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressColor())),
+                            title: Text("AAA Towning", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)),
+                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressBlueColor())),
                             trailing: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               // space between two icons
                               children: <Widget>[
-                                Text("\$55.99", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)), // icon-1
-                                Text('Completed on 10/15/2020', style: TextStyle(color: buttonPressColor())),                              ],
+                                Text("\$55.99", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)), // icon-1
+                                Text('Completed on 10/15/2020', style: TextStyle(color: buttonPressBlueColor())),                              ],
                             ),
 
                           ),
                         ),
                         Card(
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: buttonPressColor(),width: 2),
+                              side: BorderSide(color: buttonPressBlueColor(),width: 2),
                               borderRadius: BorderRadius.circular(4.0)),
                           child: ListTile(
-                            title: Text("DEF Roadside", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)),
-                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressColor())),
+                            title: Text("DEF Roadside", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)),
+                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressBlueColor())),
                             trailing: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               // space between two icons
                               children: <Widget>[
-                                Text("\$22.21", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)), // icon-1
-                                Text('Completed on 09/29/2020', style: TextStyle(color: buttonPressColor())),                              ],
+                                Text("\$22.21", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)), // icon-1
+                                Text('Completed on 09/29/2020', style: TextStyle(color: buttonPressBlueColor())),                              ],
                             ),
 
                           ),
                         ),
                         Card(
                           shape: RoundedRectangleBorder(
-                              side: BorderSide(color: buttonPressColor(),width: 2),
+                              side: BorderSide(color: buttonPressBlueColor(),width: 2),
                               borderRadius: BorderRadius.circular(4.0)),
                           child: ListTile(
-                            title: Text("BBB Towning", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)),
-                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressColor())),
+                            title: Text("BBB Towning", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)),
+                            subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressBlueColor())),
                             trailing: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               // space between two icons
                               children: <Widget>[
-                                Text("\$22.21", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)), // icon-1
-                                Text('Completed on 09/29/2020', style: TextStyle(color: buttonPressColor())),                              ],
+                                Text("\$22.21", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)), // icon-1
+                                Text('Completed on 09/29/2020', style: TextStyle(color: buttonPressBlueColor())),                              ],
                             ),
 
                           ),

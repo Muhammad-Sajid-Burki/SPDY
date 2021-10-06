@@ -3,13 +3,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spdy/pages/Widgets/colors.dart';
 import 'package:spdy/pages/Acc/acc1.dart';
 
-class Login1 extends StatefulWidget {
+class Login_1 extends StatefulWidget {
 
   @override
-  _Login1State createState() => _Login1State();
+  _Login_1State createState() => _Login_1State();
 }
 
-class _Login1State extends State<Login1> {
+class _Login_1State extends State<Login_1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,7 @@ class _Login1State extends State<Login1> {
 
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: buttonPressColor()
+                          color: buttonPressBlueColor()
                       ),
                       child: GestureDetector(
                         onTap: () {

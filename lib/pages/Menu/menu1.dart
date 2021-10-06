@@ -28,47 +28,47 @@ class _Menu_1State extends State<Menu_1> {
 
                   Card(
             shape: RoundedRectangleBorder(
-            side: BorderSide(color: buttonPressColor(),width: 2),
+            side: BorderSide(color: buttonPressBlueColor(),width: 2),
                 borderRadius: BorderRadius.circular(4.0)),
                     child: ListTile(
-                      title: Text("Current Order", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)),
-                      subtitle: Text('Check an order that you are doing', style: TextStyle(color: buttonPressColor())),
+                      title: Text("Current Order", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)),
+                      subtitle: Text('Check an order that you are doing', style: TextStyle(color: buttonPressBlueColor())),
                     ),
                   ),
                   Card(
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: buttonPressColor(),width: 2),
+                        side: BorderSide(color: buttonPressBlueColor(),width: 2),
                         borderRadius: BorderRadius.circular(4.0)),
                     child: ListTile(
-                      title: Text('Past Order', style: TextStyle(color: buttonPressColor(),fontWeight: FontWeight.bold)),
-                      subtitle: Text("Check previously order completed.", style: TextStyle(color: buttonPressColor())),
+                      title: Text('Past Order', style: TextStyle(color: buttonPressBlueColor(),fontWeight: FontWeight.bold)),
+                      subtitle: Text("Check previously order completed.", style: TextStyle(color: buttonPressBlueColor())),
                     ),
                   ),
                   Card(
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: buttonPressColor(),width: 2),
+                        side: BorderSide(color: buttonPressBlueColor(),width: 2),
                         borderRadius: BorderRadius.circular(4.0)),
                     child: ListTile(
-                      title: Text('Payment', style: TextStyle(color: buttonPressColor(),fontWeight: FontWeight.bold)),
-                      subtitle: Text("Edit payment method.", style: TextStyle(color: buttonPressColor())),
+                      title: Text('Payment', style: TextStyle(color: buttonPressBlueColor(),fontWeight: FontWeight.bold)),
+                      subtitle: Text("Edit payment method.", style: TextStyle(color: buttonPressBlueColor())),
                     ),
                   ),
                   Card(
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: buttonPressColor(),width: 2),
+                        side: BorderSide(color: buttonPressBlueColor(),width: 2),
                         borderRadius: BorderRadius.circular(4.0)),
                     child: ListTile(
-                      title: Text('Account Settings', style: TextStyle(color: buttonPressColor(),fontWeight: FontWeight.bold)),
-                      subtitle: Text("Edit your account information.", style: TextStyle(color: buttonPressColor())),
+                      title: Text('Account Settings', style: TextStyle(color: buttonPressBlueColor(),fontWeight: FontWeight.bold)),
+                      subtitle: Text("Edit your account information.", style: TextStyle(color: buttonPressBlueColor())),
                     ),
                   ),
                   Card(
                     shape: RoundedRectangleBorder(
-                        side: BorderSide(color: buttonPressColor(),width: 2),
+                        side: BorderSide(color: buttonPressBlueColor(),width: 2),
                         borderRadius: BorderRadius.circular(4.0)),
                     child: ListTile(
-                      title: Text('App Settings', style: TextStyle(color: buttonPressColor(),fontWeight: FontWeight.bold)),
-                      subtitle: Text("Edit your app configurations.", style: TextStyle(color: buttonPressColor())),
+                      title: Text('App Settings', style: TextStyle(color: buttonPressBlueColor(),fontWeight: FontWeight.bold)),
+                      subtitle: Text("Edit your app configurations.", style: TextStyle(color: buttonPressBlueColor())),
                     ),
                   ),
                 ]),

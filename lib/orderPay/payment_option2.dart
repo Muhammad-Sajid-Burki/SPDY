@@ -36,7 +36,7 @@ class _PaymentOptions2State extends State<PaymentOptions2> {
                         child: Center(child: Text("Credit Card",style: TextStyle(color: Colors.white,fontSize: 20, fontWeight: FontWeight.bold), )),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: buttonPressColor()
+                            color: buttonPressBlueColor()
 
                         ),
                       ),

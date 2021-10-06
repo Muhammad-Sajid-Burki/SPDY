@@ -5,7 +5,7 @@ Color backgroundColor () {
     return Color(0xff4A90E2);
 
 }
-Color buttonPressColor () {
+Color buttonPressBlueColor () {
 
   return Color(0xff0040D4);
 
@@ -26,6 +26,12 @@ Color greenColor () {
 Color buttonPressPurpleColor () {
 
   return Color(0xff9013FE);
+
+}
+
+Color buttonPressRedColor () {
+
+  return Color(0xffD0021B);
 
 }
 

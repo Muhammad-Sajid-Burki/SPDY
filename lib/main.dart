@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: backgroundColor(),
       ),
       debugShowCheckedModeBanner: false,
-      home: Current_1(),
+      home: Login_1(),
      
     );
   }

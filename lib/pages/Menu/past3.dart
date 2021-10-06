@@ -42,7 +42,7 @@ class _Past_3State extends State<Past_3> {
   );
 
   Color _containerColor = Colors.white;
-  Color _textColor = buttonPressColor();
+  Color _textColor = buttonPressBlueColor();
 
   @override
   Widget build(BuildContext context) {
@@ -78,18 +78,18 @@ class _Past_3State extends State<Past_3> {
 
                     Card(
                       shape: RoundedRectangleBorder(
-                          side: BorderSide(color: buttonPressColor(),width: 2),
+                          side: BorderSide(color: buttonPressBlueColor(),width: 2),
                           borderRadius: BorderRadius.circular(4.0)),
                       child: ListTile(
-                        title: Text("XYZ Roadside", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)),
-                        subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressColor())),
+                        title: Text("XYZ Roadside", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)),
+                        subtitle: Text('#ABC-123', style: TextStyle(color: buttonPressBlueColor())),
                         trailing: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           // space between two icons
                           children: <Widget>[
-                            Text("\$22.21", style: TextStyle(color: buttonPressColor(), fontWeight: FontWeight.bold)), // icon-1
-                            Text('Completed on 05/29/2021', style: TextStyle(color: buttonPressColor())),                              ],
+                            Text("\$22.21", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold)), // icon-1
+                            Text('Completed on 05/29/2021', style: TextStyle(color: buttonPressBlueColor())),                              ],
                         ),
 
                       ),
@@ -118,7 +118,7 @@ class _Past_3State extends State<Past_3> {
                       onTap: () {
                         setState(() {
                           _textColor = Colors.white;
-                          _containerColor = buttonPressColor();
+                          _containerColor = buttonPressBlueColor();
                         });
                       },
                       child: Center(
@@ -128,7 +128,7 @@ class _Past_3State extends State<Past_3> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50.0),
                               color: _containerColor,
-                          border: Border.all(color: buttonPressColor(), width: 2)
+                          border: Border.all(color: buttonPressBlueColor(), width: 2)
                           ),
                           child: Center(
                               child: Text(

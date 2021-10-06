@@ -7,7 +7,7 @@ Widget pressedButton(String text) {
       width: 280,
       height: 60,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50.0), color: buttonPressColor()),
+          borderRadius: BorderRadius.circular(50.0), color: buttonPressBlueColor()),
       child: Center(
           child: Text(
         text,

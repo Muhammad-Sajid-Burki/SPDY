@@ -75,7 +75,7 @@ class _Acc_2State extends State<Acc_2> {
                       height: 60,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: buttonPressColor()),
+                          color: buttonPressBlueColor()),
                       child: Center(
                           child: Text(
                         "Edit Password",
