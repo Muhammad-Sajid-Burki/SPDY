@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spdy/pages/Widgets/colors.dart';
 
 class Acc_5 extends StatefulWidget {
 
@@ -18,7 +19,7 @@ class _Acc_5State extends State<Acc_5> {
       body: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          color: Colors.blue,
+          color: backgroundColor(),
           child:
           Padding(
             padding: const EdgeInsets.only(top: 120, bottom: 20, right: 35, left: 35),
@@ -111,7 +112,7 @@ class _Acc_5State extends State<Acc_5> {
 
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: Colors.blue[900]
+                          color: buttonPressColor()
                       ),
                       child: Center(
                           child: Text(

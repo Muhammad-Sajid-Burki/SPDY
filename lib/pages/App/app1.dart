@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spdy/pages/Widgets/colors.dart';
 
 class App_1 extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _App_1State extends State<App_1> {
       body: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          color: Colors.blue,
+          color: backgroundColor(),
           child: Padding(
             padding: const EdgeInsets.only(top: 80, bottom: 20),
             child: SingleChildScrollView(
@@ -43,14 +44,14 @@ class _App_1State extends State<App_1> {
                           Text(
                             "Notification",
                             style: TextStyle(
-                                color: Colors.blue[900],
+                                color: buttonPressColor(),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "Make changes to your Notification Settings.",
                             style: TextStyle(
-                              color: Colors.blue[900],
+                              color: buttonPressColor(),
                               fontSize: 15,
                             ),
                           ),
@@ -74,14 +75,14 @@ class _App_1State extends State<App_1> {
                           Text(
                             "Set Default Map",
                             style: TextStyle(
-                                color: Colors.blue[900],
+                                color: buttonPressColor(),
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "Default Map: SPDY",
                             style: TextStyle(
-                              color: Colors.blue[900],
+                              color: buttonPressColor(),
                               fontSize: 15,
                             ),
                           ),

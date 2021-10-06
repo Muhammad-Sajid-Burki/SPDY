@@ -20,56 +20,64 @@ class _Login1State extends State<Login1> {
           child:
           Padding(
             padding: const EdgeInsets.only(top: 120, bottom: 50),
-            child: Column(
+            child: Stack(
+              alignment: Alignment.center,
               children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
 
 
-                SvgPicture.asset("assets/images/spdy.svg"),
-                SizedBox(height: 50,),
-                Text("Welcome!", style: TextStyle(fontSize: 30, color: Colors.white),),
-                SizedBox(height: 80,),
-                Container(
-                  width: 280,
-                  height: 60,
+                    SvgPicture.asset("assets/images/spdy.svg"),
+                    SizedBox(height: 50,),
+                    Text("Welcome!", style: TextStyle(fontSize: 30, color: Colors.white),),
+                    SizedBox(height: 80,),
+                    Container(
+                      width: 280,
+                      height: 60,
 
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.white
-                  ),
-                  child: Center(
-                      child: Text(
-                        "Register",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      )),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Colors.white
+                      ),
+                      child: Center(
+                          child: Text(
+                            "Register",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          )),
+                    ),
+                    SizedBox(height: 30,),
+                    Container(
+                      width: 280,
+                      height: 60,
+
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: buttonPressColor()
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Acc_1()));
+                        },
+                        child: Center(
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            )),
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 30,),
-                Container(
-                  width: 280,
-                  height: 60,
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text("©SPDY Technologies, LLC", style: TextStyle(fontSize: 15, color: Colors.white),)),
 
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.blue[900]
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Acc_1()));
-                    },
-                    child: Center(
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        )),
-                  ),
-                ),
-                SizedBox(height: 180,),
-                Text("©SPDY Technologies, LLC", style: TextStyle(fontSize: 10, color: Colors.white),),
               ],
             ),
           )),

@@ -38,6 +38,8 @@ dependencies:
   fluttertoast: ^8.0.8
   google_maps_flutter: ^2.0.8
   geolocator: ^7.6.0
+  pin_code_fields: ^7.3.0
+  dots_indicator: ^2.0.0
 
 dev_dependencies:
   flutter_test:
