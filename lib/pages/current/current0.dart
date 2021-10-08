@@ -39,9 +39,7 @@ class _Current_0State extends State<Current_0> {
                         color: Colors.white,
                         size: 50,
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
+
                       Text(
                         "Menu",
                         style: TextStyle(

@@ -2,17 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spdy/pages/Widgets/colors.dart';
 
-class OrderPay_2 extends StatefulWidget {
+class Pay_4 extends StatefulWidget {
 
 
   @override
-  _OrderPay_2State createState() => _OrderPay_2State();
+  _Pay_4State createState() => _Pay_4State();
 }
 
-class _OrderPay_2State extends State<OrderPay_2> {
+class _Pay_4State extends State<Pay_4> {
 
-  bool _isChecked = false;
-  String _currText = '';
+  TextEditingController textEditingController1 = TextEditingController();
+  TextEditingController textEditingController2 = TextEditingController();
+  TextEditingController textEditingController3 = TextEditingController();
+  TextEditingController textEditingController4 = TextEditingController();
 
 
   @override
@@ -40,6 +42,7 @@ class _OrderPay_2State extends State<OrderPay_2> {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: TextField(
+                            controller: textEditingController1,
                             decoration: InputDecoration(hintText: "Type the Name on Credit Card",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
                             ),
                           ),
@@ -55,7 +58,8 @@ class _OrderPay_2State extends State<OrderPay_2> {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: TextField(
-                            decoration: InputDecoration(hintText: "Type the 16-Digit Number",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
+                            controller: textEditingController2,
+                            decoration: InputDecoration(hintText: "Type the 16-Digit Number",hintStyle: TextStyle(color: Colors.grey[500],), border:InputBorder.none,
                             ),
                           ),
                         )
@@ -70,6 +74,7 @@ class _OrderPay_2State extends State<OrderPay_2> {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: TextField(
+                            controller: textEditingController3,
                             decoration: InputDecoration(hintText: "MM/YY",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
                             ),
                           ),
@@ -85,45 +90,65 @@ class _OrderPay_2State extends State<OrderPay_2> {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: TextField(
+                            controller: textEditingController4,
                             decoration: InputDecoration(hintText: "000",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
                             ),
                           ),
                         )
                     ),
-                    SizedBox(height: 10,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                      Checkbox(
-
-                      checkColor: buttonPressBlueColor(),
-                      fillColor: MaterialStateColor.resolveWith(
-                            (states) {
-                          if (states.contains(MaterialState.selected)) {
-                            return Colors.white; // the color when checkbox is selected;
-                          }
-                          return Colors.white; //the color when checkbox is unselected;
-                        },
+                    SizedBox(height: 40,),
+                    Center(
+                      child: Container(
+                        width: 270,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: Colors.white),
+                        child: const Center(
+                            child: Text(
+                              "Cancel",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            )),
                       ),
-
-
-
-                      value: _isChecked,
-                      onChanged: (val) {
-                        setState(() {
-                          _isChecked = val!;
-                          if (val == true) {
-                            _currText = val.toString();
-                          }
-                        });
-                      },
                     ),
-
-                         Text("Save this Credit Card Information", style: TextStyle(fontSize: 15 ,)),
-
-                      ],
+                    SizedBox(height: 20,),
+                    (textEditingController1.text.isEmpty || textEditingController2.text.isEmpty || textEditingController3.text.isEmpty || textEditingController4.text.isEmpty)
+                        ? Center(
+                      child: Container(
+                        width: 270,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: Colors.white),
+                        child: const Center(
+                            child: Text(
+                              "Submit",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            )),
+                      ),
+                    ) : Center(
+                      child: Container(
+                        width: 270,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: buttonPressBlueColor()),
+                        child: const Center(
+                            child: Text(
+                              "Submit",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            )),
+                      ),
                     )
-
 
                   ],
                 ),
@@ -134,47 +159,30 @@ class _OrderPay_2State extends State<OrderPay_2> {
 
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: Align(
+                child: Container(
                   alignment: Alignment.bottomCenter,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      FlatButton(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-
-                          children: [
-                            Icon(Icons.navigate_before, color: Colors.white, size: 60,),
-                            Text('Back', style: TextStyle(color: Colors.white, fontSize: 20),),
-
-                          ],
-                        ),
-                        onPressed: () {
-                          // _controller.previousPage(
-                          //     duration: _kDuration, curve: _kCurve);
-                        },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: const [
+                      Icon(
+                        Icons.menu,
+                        color: Colors.white,
+                        size: 50,
                       ),
-                      FlatButton(
-                        child: Row(
-                          children: [
-                            Text('Next', style: TextStyle(color: Colors.white, fontSize: 20),),
-                            Icon(Icons.navigate_next, color: Colors.white, size: 60,),
-
-                          ],
-                        ),
-                        onPressed: () {
-                          // _controller.nextPage(duration: _kDuration, curve: _kCurve);
-                        },
+                      Text(
+                        "Menu",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           )),
     );
   }
 }
-
 

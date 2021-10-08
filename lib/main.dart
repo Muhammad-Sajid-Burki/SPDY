@@ -18,7 +18,9 @@ import 'package:spdy/pages/Order/order2.dart';
 import 'package:spdy/pages/Order/order4.dart';
 import 'package:spdy/pages/Order/order5.dart';
 import 'package:spdy/pages/Pay/pay1.dart';
+import 'package:spdy/pages/Pay/pay12.dart';
 import 'package:spdy/pages/Pay/pay2.dart';
+import 'package:spdy/pages/Pay/pay4.dart';
 import 'package:spdy/pages/Registeration/login_page.dart';
 import 'package:spdy/pages/Registeration/register2.dart';
 import 'package:spdy/pages/Registeration/register3.dart';
@@ -55,12 +57,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         backgroundColor: backgroundColor(),
-          brightness: Brightness.dark,
-          unselectedWidgetColor:Colors.white
-
       ),
       debugShowCheckedModeBanner: false,
-      home: Pay_2(),
+      home: OrderPay_2(),
      
     );
   }

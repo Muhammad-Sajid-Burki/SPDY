@@ -317,7 +317,7 @@ class _Current_1State extends State<Current_1> {
                             border: Border.all(color: greenColor(), width: 2)),
                         child: Center(
                             child: Text(
-                          "Contact Provider",
+                          "Yes, Cancel Order",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
