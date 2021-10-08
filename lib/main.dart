@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spdy/Map/map.dart';
 import 'package:spdy/orderPay/orderpay2.dart';
+import 'package:spdy/orderPay/payment_option2.dart';
 import 'package:spdy/pages/App/app1.dart';
 import 'package:spdy/pages/Login/login2.dart';
 import 'package:spdy/pages/Login/login4.dart';
@@ -12,6 +13,12 @@ import 'package:spdy/pages/Menu/past0.dart';
 import 'package:spdy/pages/Menu/past1.dart';
 import 'package:spdy/pages/Menu/past3.dart';
 import 'package:spdy/pages/Menu/past5.dart';
+import 'package:spdy/pages/Order/order1.dart';
+import 'package:spdy/pages/Order/order2.dart';
+import 'package:spdy/pages/Order/order4.dart';
+import 'package:spdy/pages/Order/order5.dart';
+import 'package:spdy/pages/Pay/pay1.dart';
+import 'package:spdy/pages/Pay/pay2.dart';
 import 'package:spdy/pages/Registeration/login_page.dart';
 import 'package:spdy/pages/Registeration/register2.dart';
 import 'package:spdy/pages/Registeration/register3.dart';
@@ -27,6 +34,8 @@ import 'package:spdy/pages/Acc/acc5.dart';
 import 'package:spdy/pages/Login/login1.dart';
 import 'package:spdy/pages/current/current0.dart';
 import 'package:spdy/pages/current/current1.dart';
+
+import 'orderPay/orderpay1.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -46,9 +55,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         backgroundColor: backgroundColor(),
+          brightness: Brightness.dark,
+          unselectedWidgetColor:Colors.white
+
       ),
       debugShowCheckedModeBanner: false,
-      home: Login_1(),
+      home: Pay_2(),
      
     );
   }

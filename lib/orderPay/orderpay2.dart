@@ -10,45 +10,131 @@ class OrderPay_2 extends StatefulWidget {
 }
 
 class _OrderPay_2State extends State<OrderPay_2> {
+
+  bool _isChecked = false;
+  String _currText = '';
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor(),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+      body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          color: backgroundColor(),
           child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 30, top: 60, right: 30),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Location Information", style: TextStyle(fontSize: 23, color: Colors.white, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 20,),
+                    Text("Name on Card", style: TextStyle(fontSize: 16, color: Colors.white, )),
+                    SizedBox(height: 1,),
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: TextField(
+                            decoration: InputDecoration(hintText: "Type the Name on Credit Card",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
+                            ),
+                          ),
+                        )
+                    ),
+                    SizedBox(height: 10,),
+                    Text("Credit Card Number", style: TextStyle(fontSize: 16, color: Colors.white, )),
+                    SizedBox(height: 1,),
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: TextField(
+                            decoration: InputDecoration(hintText: "Type the 16-Digit Number",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
+                            ),
+                          ),
+                        )
+                    ),
+                    SizedBox(height: 10,),
+                    Text("Expiration", style: TextStyle(fontSize: 16, color: Colors.white, )),
+                    SizedBox(height: 1,),
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: TextField(
+                            decoration: InputDecoration(hintText: "MM/YY",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
+                            ),
+                          ),
+                        )
+                    ),
+                    SizedBox(height: 10,),
+                    Text("3-Digit/4-Digit Number", style: TextStyle(fontSize: 16, color: Colors.white, )),
+                    SizedBox(height: 1,),
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: TextField(
+                            decoration: InputDecoration(hintText: "000",hintStyle: TextStyle(color: Colors.grey[500]), border:InputBorder.none,
+                            ),
+                          ),
+                        )
+                    ),
+                    SizedBox(height: 10,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                      Checkbox(
 
-              children: [
-                Positioned(
-                    left: 30,
-                    top: 70,
-                    child: Text("Payment", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20))),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-                  child: ListView(
-
-                    children: [
-                      Text("Name on Card"),
-                      Card(
-
-                        child: Text("New"),
+                      checkColor: buttonPressBlueColor(),
+                      fillColor: MaterialStateColor.resolveWith(
+                            (states) {
+                          if (states.contains(MaterialState.selected)) {
+                            return Colors.white; // the color when checkbox is selected;
+                          }
+                          return Colors.white; //the color when checkbox is unselected;
+                        },
                       ),
-                      Card(
 
-                        child: Text("New"),
-                      ),
-                      Card(
 
-                        child: Text("New"),
-                      ),
-                      Card(
 
-                        child: Text("New"),
-                      ),
-                    ],
-                  ),
+                      value: _isChecked,
+                      onChanged: (val) {
+                        setState(() {
+                          _isChecked = val!;
+                          if (val == true) {
+                            _currText = val.toString();
+                          }
+                        });
+                      },
+                    ),
+
+                         Text("Save this Credit Card Information", style: TextStyle(fontSize: 15 ,)),
+
+                      ],
+                    )
+
+
+                  ],
                 ),
-                Align(
+              ),
+
+
+
+
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
@@ -56,6 +142,7 @@ class _OrderPay_2State extends State<OrderPay_2> {
                     children: <Widget>[
                       FlatButton(
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
 
                           children: [
                             Icon(Icons.navigate_before, color: Colors.white, size: 60,),
@@ -82,10 +169,10 @@ class _OrderPay_2State extends State<OrderPay_2> {
                       )
                     ],
                   ),
-                )
-              ]
-          ),
-        )
+                ),
+              )
+            ],
+          )),
     );
   }
 }

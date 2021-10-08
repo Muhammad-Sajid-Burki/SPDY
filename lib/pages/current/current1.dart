@@ -10,13 +10,14 @@ class Current_1 extends StatefulWidget {
 }
 
 class _Current_1State extends State<Current_1> {
-
   bool _hasBeenPressed = false;
 
-  double containerHeight = 0;
+  Color backColorcanle = Colors.white;
+  Color canceltextColor = buttonPressBlueColor();
 
   @override
   Widget build(BuildContext context) {
+    print("build called");
     return Scaffold(
       body: Container(
           height: MediaQuery.of(context).size.height,
@@ -28,192 +29,229 @@ class _Current_1State extends State<Current_1> {
                 padding: const EdgeInsets.only(left: 30, top: 80, right: 30),
                 child: Stack(
                   children: [
-                    Text("Current Orders", style: TextStyle(fontSize: 23, color: Colors.white, fontWeight: FontWeight.bold)),
+                    Text("Current Orders",
+                        style: TextStyle(
+                            fontSize: 23,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
                     Padding(
                       padding: const EdgeInsets.only(top: 50),
                       child: Container(
                         padding: EdgeInsets.all(10),
                         height: 300,
                         width: 400,
-                        decoration: BoxDecoration(
-                            color: Colors.white
-                        ),
+                        decoration: BoxDecoration(color: Colors.white),
                         child: Stack(
                           children: [
                             Column(
                               children: [
                                 Align(
                                     alignment: Alignment.topLeft,
-                                    child: Text("Order #123-ABC", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)),
-                                SizedBox(height: 10,),
+                                    child: Text(
+                                      "Order #123-ABC",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    )),
+                                SizedBox(
+                                  height: 10,
+                                ),
                                 Align(
                                     alignment: Alignment.topLeft,
-                                    child: Text("ABC Towning", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
-                                SizedBox(height: 10,),
+                                    child: Text("ABC Towning",
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold))),
+                                SizedBox(
+                                  height: 10,
+                                ),
                                 Align(
                                     alignment: Alignment.topLeft,
-                                    child: Text("Request: Light Towing, New Battery Install", style: TextStyle(fontSize: 15,))),
-                                SizedBox(height: 15,),
-
+                                    child: Text(
+                                        "Request: Light Towing, New Battery Install",
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                        ))),
+                                SizedBox(
+                                  height: 15,
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 10),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text("Someone will see you in:", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,letterSpacing: 1),),
+                                      Text(
+                                        "Someone will see you in:",
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            letterSpacing: 1),
+                                      ),
                                       Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(3),
-                                          color: orangeColor(),
-
-                                        ),
-                                        height: 30,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(3),
+                                            color: orangeColor(),
+                                          ),
+                                          height: 30,
                                           width: 90,
-                                          child:Center(child: Text("15:55", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),)))
+                                          child: Center(
+                                              child: Text(
+                                            "15:55",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                          )))
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 30,),
+                                SizedBox(
+                                  height: 30,
+                                ),
                                 GestureDetector(
-                                  onTap: () {
-
-                                  },
+                                  onTap: () {},
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20),
                                     child: Container(
                                       width: MediaQuery.of(context).size.width,
                                       height: 35,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(50.0),
+                                          borderRadius:
+                                              BorderRadius.circular(50.0),
                                           color: Colors.white,
-                                          border: Border.all(color: greenColor(), width: 2)
-                                      ),
+                                          border: Border.all(
+                                              color: greenColor(), width: 2)),
                                       child: Center(
                                           child: Text(
-                                            "Contact Provider",
-                                            style: TextStyle(
-                                                color: greenColor(),
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                          )),
+                                        "Contact Provider",
+                                        style: TextStyle(
+                                            color: greenColor(),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      )),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 20,),
+                                SizedBox(
+                                  height: 20,
+                                ),
                                 GestureDetector(
-                                  onTap: () {
-
-                                  },
+                                  onTap: () {},
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20),
                                     child: Container(
                                       width: MediaQuery.of(context).size.width,
                                       height: 35,
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(50.0),
-                                          color: buttonPressPurpleColor(),
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: buttonPressPurpleColor(),
                                       ),
                                       child: Center(
                                           child: Text(
-                                            "Show Map",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                          )),
+                                        "Show Map",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      )),
                                     ),
                                   ),
                                 ),
-
                               ],
                             ),
                             Positioned(
-                                top: 0,
-                                right: 0,
-                                child: Icon(Icons.more_vert)),
-
+                                top: 0, right: 0, child: Icon(Icons.more_vert)),
                           ],
-                        ),),),
-
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
               GestureDetector(
-                onTap: (){
-                  _settingModalBottomSheet(context);
-
-                },
-
-                child:
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: Container(
-                    alignment: Alignment.bottomCenter,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(
-                          Icons.menu,
-                          color: Colors.white,
-                          size: 50,
-                        ),
-
-
-                        Text(
-                          "Menu",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
+                  onTap: () {
+                    _settingModalBottomSheet(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: Container(
+                      alignment: Alignment.bottomCenter,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(
+                            Icons.menu,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          Text(
+                            "Menu",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                )
-
-
-              ),
-
-
+                  )),
             ],
           )),
     );
   }
-  void _settingModalBottomSheet(context){
+
+  void _settingModalBottomSheet(context) {
     showModalBottomSheet(
         context: context,
-        builder: (BuildContext bc){
+        builder: (BuildContext bc) {
           return Container(
             // color: Colors.green,
             height: 113,
             child: Column(
-
               children: <Widget>[
                 ListTile(
-                    title: Center(child: Text("Contact Support", style: TextStyle(color: buttonPressBlueColor(), fontWeight: FontWeight.bold, fontSize: 20))),
-                    onTap: () => {
-                      textDialog()
-                    }
-                ),
-                Container(
-                  height: 1,
-                  color: Colors.grey
-                ),
+                  tileColor: backColorcanle,
+                    title: Center(
+                        child: Text("Contact Support",
+                            style: TextStyle(
+                                color: canceltextColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20))),
+                    onTap: () {
+                      // setState(() {
+                      //   backColorcanle = buttonPressBlueColor();
+                      //   canceltextColor = Colors.white;
+                      // });
+                      textDialog();
+                    }),
+                Container(height: 1, color: Colors.grey[300]),
                 ListTile(
-                  tileColor: _hasBeenPressed ? buttonPressBlueColor(): Colors.white,
-                  title: Center(child: Text("Cancel Order", style: TextStyle(color: _hasBeenPressed ?Colors.white : buttonPressBlueColor() , fontWeight: FontWeight.bold, fontSize: 20))),
-                  onTap: () => {
+                  tileColor: backColorcanle,
+                  title: Center(
+                      child: Text("Cancel Order",
+                          style: TextStyle(
+                              color: canceltextColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20))),
+                  onTap: () {
+                    print("clicked");
+                    // setState(() {
+                    //   backColorcanle = buttonPressBlueColor();
+                    //   canceltextColor = Colors.white;
+                    // });
 
-                      _hasBeenPressed = !_hasBeenPressed,
-
-                    dialog(),
+                    dialog();
                   },
                 ),
               ],
             ),
           );
-        }
-    );
+        });
   }
 
   void dialog() {
@@ -229,150 +267,150 @@ class _Current_1State extends State<Current_1> {
                 Column(
                   children: [
                     Text(
-                      "Are you sure?", textAlign: TextAlign.center,style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                    SizedBox(height: 10,),
+                      "Are you sure?",
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Text(
-                      "There will be penalty charges", textAlign: TextAlign.center,style: TextStyle(fontSize: 16, ),),
-
+                      "There will be penalty charges",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
                   ],
                 ),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 35,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50.0),
-                        color: buttonPressRedColor(),
-                        border: Border.all(color: buttonPressRedColor(), width: 2)
-                    ),
-                    child: Center(
-                        child: Text(
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 35,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: buttonPressRedColor(),
+                            border: Border.all(
+                                color: buttonPressRedColor(), width: 2)),
+                        child: Center(
+                            child: Text(
                           "No, Keep my Order",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         )),
-                  ),
-                  SizedBox(height: 20,),
-
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 35,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50.0),
-                        color: greenColor(),
-                        border: Border.all(color: greenColor(), width: 2)
-                    ),
-                    child: Center(
-                        child: Text(
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 35,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: greenColor(),
+                            border: Border.all(color: greenColor(), width: 2)),
+                        child: Center(
+                            child: Text(
                           "Contact Provider",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         )),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-
+                ),
               ],
             ),
           ),
-
         );
       },
       context: context,
     );
   }
 
-  void textDialog () {
+  void textDialog() {
     showDialog(
-        builder: (BuildContext context) {
-      return Dialog(
-    child: Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4.0),
-        color: Colors.white,
-      ),
-      height: 380,
-      width: MediaQuery.of(context).size.width,
-      child: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Please write your concerns below",
-            style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 10, vertical: 20),
+      builder: (BuildContext context) {
+        return Dialog(
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4.0),
+              color: Colors.white,
+            ),
+            height: 380,
+            width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      border: Border.all(color: Colors.grey)),
-                  child: Padding(
-                    padding:
-                    const EdgeInsets.only(top: 5, left: 15),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: "Type Here...",
-                          border: InputBorder.none),
-                    ),
-                  ),
-                  height: 240,
-                  // width: MediaQuery.of(context).size.width,
+                SizedBox(
+                  height: 20,
                 ),
-                SizedBox(height: 20),
-                GestureDetector(
-                  onTap: () {
-
-                  },
-                  child: Center(
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 35,
-                      decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.circular(50.0),
-                          color: buttonPressBlueColor(),
-                          border: Border.all(
-                              color: buttonPressBlueColor(),
-                              width: 2)),
-                      child: Center(
-                          child: Text(
-                            "Send to Support",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15),
-                          )),
-                    ),
+                Text(
+                  "Please write your concerns below",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4.0),
+                            border: Border.all(color: Colors.grey)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 5, left: 15),
+                          child: TextField(
+                            decoration: InputDecoration(
+                                hintText: "Type Here...",
+                                border: InputBorder.none),
+                          ),
+                        ),
+                        height: 240,
+                        // width: MediaQuery.of(context).size.width,
+                      ),
+                      SizedBox(height: 20),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Center(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: 35,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50.0),
+                                color: buttonPressBlueColor(),
+                                border: Border.all(
+                                    color: buttonPressBlueColor(), width: 2)),
+                            child: Center(
+                                child: Text(
+                              "Send to Support",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
+                            )),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-        ],
-      ),
-    ),
-
-          );
-        },
+        );
+      },
       context: context,
     );
   }
 }
-

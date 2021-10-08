@@ -139,6 +139,12 @@ class _Register_3State extends State<Register_3> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Checkbox(
+                          focusColor: Colors.white,
+                          activeColor: Colors.white,
+                          checkColor: Colors.blue,
+                          hoverColor: Colors.white,
+
+
 
                           value: _isChecked,
                           onChanged: (val) {
