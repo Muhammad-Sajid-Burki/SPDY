@@ -115,7 +115,7 @@ class _Pay_4State extends State<Pay_4> {
                       ),
                     ),
                     SizedBox(height: 20,),
-                    (textEditingController1.text.isEmpty || textEditingController2.text.isEmpty || textEditingController3.text.isEmpty || textEditingController4.text.isEmpty)
+                    (textEditingController1.text.isEmpty && textEditingController2.text.isEmpty && textEditingController3.text.isEmpty && textEditingController4.text.isEmpty)
                         ? Center(
                       child: Container(
                         width: 270,

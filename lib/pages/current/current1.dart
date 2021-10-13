@@ -347,64 +347,82 @@ class _Current_1State extends State<Current_1> {
             ),
             height: 380,
             width: MediaQuery.of(context).size.width,
-            child: Column(
+            child: Stack(
               children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "Please write your concerns below",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4.0),
-                            border: Border.all(color: Colors.grey)),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 5, left: 15),
-                          child: TextField(
-                            decoration: InputDecoration(
-                                hintText: "Type Here...",
-                                border: InputBorder.none),
-                          ),
-                        ),
-                        height: 240,
-                        // width: MediaQuery.of(context).size.width,
-                      ),
-                      SizedBox(height: 20),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Center(
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 35,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50.0),
-                                color: buttonPressBlueColor(),
-                                border: Border.all(
-                                    color: buttonPressBlueColor(), width: 2)),
-                            child: Center(
-                                child: Text(
-                              "Send to Support",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15),
-                            )),
-                          ),
-                        ),
-                      ),
-                    ],
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      "Please write your concerns below",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1),
+                    ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 40, bottom: 60),
+                  child: Container(
+                    child: Column(
+                      children: const [
+                        TextField(
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Type Here...',
+                              hintStyle:
+                              TextStyle(color: Colors.grey),
+                              contentPadding:
+                              EdgeInsets.only(left: 10)),
+
+                        )
+                      ],
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4.0),
+                        border: Border.all(color: Colors.grey)),
+
+                    // width: MediaQuery.of(context).size.width,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      bottom: 10, left: 10, right: 10),
+                  child: Container(
+                    alignment: Alignment.bottomCenter,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 35,
+                          decoration: BoxDecoration(
+                              borderRadius:
+                              BorderRadius.circular(50.0),
+                              color: buttonPressBlueColor(),
+                              border: Border.all(
+                                  color: buttonPressBlueColor(),
+                                  width: 2)),
+                          child: Center(
+                              child: Text(
+                                "Send to Support",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Icon(Icons.cancel_outlined, size: 18,))
               ],
             ),
           ),

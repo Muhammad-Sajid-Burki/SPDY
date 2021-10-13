@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:spdy/pages/Widgets/colors.dart';
 
 class SPDYMap extends StatefulWidget {
 
@@ -62,7 +63,7 @@ class _SPDYMapState extends State<SPDYMap> {
               padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 60),
               child: Container(
                 padding: EdgeInsets.all(10),
-                height: 150,
+                height: 170,
                 width: 400,
                 decoration: BoxDecoration(
                   color: Colors.white
@@ -81,10 +82,97 @@ class _SPDYMapState extends State<SPDYMap> {
                   Align(
                       alignment: Alignment.topLeft,
                       child: Text("ABC Towning", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+                  SizedBox(height: 10,),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      child: Text("Light Towing, Flatbed, New Battery Install", style: TextStyle(fontSize: 15, ))),
+                  Padding(
+                    padding: const EdgeInsets.only(top:20, left: 20, right: 20),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 35,
 
+                      decoration: BoxDecoration(
+
+                          borderRadius:
+                          BorderRadius.circular(50.0),
+                          color: Colors.white,
+                          border: Border.all(
+                              color: greenColor(),
+                              width: 2)),
+                      child: Center(
+                          child: Text(
+                            "Contact Provider",
+                            style: TextStyle(
+                                color: greenColor(),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
+                          )),
+                    ),
+                  ),
                 ],
               ),),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20, left: 40, right: 40),
+              child: Container(
+                alignment: Alignment.bottomCenter,
+                child: Column(
+
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: buttonPressBlueColor()),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              "Terry",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25),
+                            ),
+                            Text(
+                              "will arrive in",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20),
+                            ),
+                            Text(
+                              "15:10",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+
+                                  color: Colors.white,
+                                  fontSize: 30),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 15,),
+                    Icon(
+                      Icons.menu,
+                      color: buttonPressBlueColor(),
+                      size: 50,
+                    ),
+
+                    Text(
+                      "Menu",
+                      style: TextStyle(
+                          color: buttonPressBlueColor(),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ),
+            ),
 
 
 

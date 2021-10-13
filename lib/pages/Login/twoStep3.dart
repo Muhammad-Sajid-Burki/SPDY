@@ -5,6 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:spdy/pages/Widgets/colors.dart';
 
+import 'login4.dart';
+
 class Two_Step_3 extends StatefulWidget {
   @override
   _Two_Step_3State createState() => _Two_Step_3State();
@@ -15,7 +17,9 @@ class _Two_Step_3State extends State<Two_Step_3> {
   TextEditingController passEditingController = new TextEditingController();
 
   TextEditingController textEditingController = TextEditingController();
-  // ..text = "123456";
+
+  Color submitColor = Colors.white;
+
 
   StreamController<ErrorAnimationType> errorController =
       StreamController<ErrorAnimationType>();
@@ -62,25 +66,26 @@ class _Two_Step_3State extends State<Two_Step_3> {
                     PinCodeTextField(
                       appContext: context,
                       length: 6,
+
+                      hintCharacter: "0",
                       obscureText: false,
                       animationType: AnimationType.fade,
                       pinTheme: PinTheme(
                         shape: PinCodeFieldShape.box,
                         borderRadius: BorderRadius.circular(5),
                         fieldHeight: 50,
-                        fieldWidth: 40,
+                        fieldWidth: 50,
                         activeFillColor: Colors.white,
-                        disabledColor: Colors.white,
                         selectedFillColor: Colors.white,
                         inactiveFillColor: Colors.white,
                       ),
                       animationDuration: Duration(milliseconds: 300),
-                      backgroundColor: Colors.transparent,
                       enableActiveFill: true,
                       errorAnimationController: errorController,
                       controller: textEditingController,
                       onCompleted: (v) {
                         print("Completed");
+                        submitColor = buttonPressBlueColor();
                       },
                       onChanged: (value) {
                         print(value);
@@ -98,23 +103,28 @@ class _Two_Step_3State extends State<Two_Step_3> {
                     SizedBox(
                       height: 20,
                     ),
-                    Center(
-                            child: Container(
-                              width: 280,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50.0),
-                                  color: buttonPressBlueColor()),
-                              child: Center(
-                                  child: Text(
-                                "Submit",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20),
-                              )),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Login_4()));
+                      },
+                      child: Center(
+                              child: Container(
+                                width: 280,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: submitColor),
+                                child: Center(
+                                    child: Text(
+                                  "Submit",
+                                  style: TextStyle(
+                                      color: submitColor == buttonPressBlueColor()? Colors.white : Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
+                                )),
+                              ),
                             ),
-                          ),
+                    ),
                     SizedBox(
                       height: 30,
                     ),

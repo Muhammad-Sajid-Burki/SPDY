@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:spdy/Model/directionDetails.dart';
+import 'package:spdy/assistant/assistantMethod.dart';
 import 'package:spdy/pages/Widgets/button.dart';
 import 'package:spdy/pages/Widgets/colors.dart';
 import 'package:spdy/pages/Acc/acc1.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Order_5 extends StatefulWidget {
   @override
@@ -34,30 +37,96 @@ class _Order_5State extends State<Order_5> with TickerProviderStateMixin {
   Completer<GoogleMapController> _controller = Completer();
   late GoogleMapController newGoogleMapController;
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  late DirectionDetails tripDirectionDetails;
   List<LatLng> pLineCoordinates = [];
   late Position currentPosition;
   var geolocator = Geolocator();
+  Set<Polyline> polyLineSet = {};
+  Set<Marker> markerSet = {};
+  Set<Circle> circleSet = {};
 
-  double bottomPaddingOfMap = 0;
+  @override
+  void initState() {
+    /// add origin marker origin marker
+    _addMarker(
+      LatLng(_originLatitude, _originLongitude),
+      "origin",
+      BitmapDescriptor.defaultMarker,
+    );
 
+    // Add destination marker
+    _addMarker(
+      LatLng(_destLatitude, _destLongitude),
+      "destination",
+      BitmapDescriptor.defaultMarkerWithHue(90),
+    );
+
+    _getPolyline();
+
+    super.initState();
+  }
 
   void locatePosition() async {
-    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
     currentPosition = position;
 
     LatLng latLatPosition = LatLng(position.latitude,position.longitude);
+    print(currentPosition.altitude);
+    print(currentPosition.latitude);
 
-    CameraPosition cameraPosition = CameraPosition(target: latLatPosition, zoom: 14);
-    // newGoogleMapController.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+    CameraPosition cameraPosition =
+    new CameraPosition(target: latLatPosition, zoom: 14);
+    newGoogleMapController
+        .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
 
-
+    String address =
+    await AssistantMethods.searchCoordinateAddress(position, context);
+    print("this is your address " + address);
   }
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+    target: LatLng(_originLatitude, _originLongitude),
     zoom: 14.4746,
   );
 
+  // This method will add markers to the map based on the LatLng position
+  _addMarker(LatLng position, String id, BitmapDescriptor descriptor) {
+    MarkerId markerId = MarkerId(id);
+    Marker marker =
+    Marker(markerId: markerId, icon: descriptor, position: position);
+    markers[markerId] = marker;
+  }
+  _addPolyLine(List<LatLng> polylineCoordinates) {
+    PolylineId id = PolylineId("mypolypoint");
+    Polyline polyline = Polyline(
+      polylineId: id,
+      points: polylineCoordinates,
+      width: 4,
+    );
+    polylines[id] = polyline;
+    setState(() {});
+  }
+  void _getPolyline() async {
+    List<LatLng> polylineCoordinates = [];
+
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+      "AIzaSyA5QBupZfYDYDMVGNOC53nGAF7K5FuDa1I",
+      PointLatLng(_originLatitude, _originLongitude),
+      PointLatLng(_destLatitude, _destLongitude),
+      travelMode: TravelMode.driving,
+    );
+    if (result.points.isNotEmpty) {
+      result.points.forEach((PointLatLng point) {
+        polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+      });
+    } else {
+      print(result.errorMessage);
+    }
+    _addPolyLine(polylineCoordinates);
+  }
+
+   Completer<WebViewController> _webcontroller =
+  Completer<WebViewController>();
 
 
   @override
@@ -121,10 +190,17 @@ class _Order_5State extends State<Order_5> with TickerProviderStateMixin {
                         padding: const EdgeInsets.only(bottom: 90),
                         child: Container(
                           child: GoogleMap(
-                            padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
                             mapType: MapType.normal,
                             myLocationButtonEnabled: false,
                             initialCameraPosition: _kGooglePlex,
+                            myLocationEnabled: true,
+                            tiltGesturesEnabled: true,
+                            compassEnabled: true,
+                            scrollGesturesEnabled: true,
+                            zoomGesturesEnabled: true,
+                            zoomControlsEnabled: true,
+                            polylines: Set<Polyline>.of(polylines.values),
+                            markers: Set<Marker>.of(markers.values),
                             onMapCreated: (GoogleMapController controller) {
                               _controller.complete(controller);
                               newGoogleMapController = controller;
@@ -187,4 +263,5 @@ class _Order_5State extends State<Order_5> with TickerProviderStateMixin {
           )),
     );
   }
+  
 }

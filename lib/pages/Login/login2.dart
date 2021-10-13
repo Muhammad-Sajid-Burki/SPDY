@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spdy/pages/Login/twoStep3.dart';
 import 'package:spdy/pages/Widgets/colors.dart';
 
 class Login_2 extends StatefulWidget {
@@ -22,7 +23,7 @@ class _Login_2State extends State<Login_2> {
           color: backgroundColor(),
           child:
           Padding(
-            padding: const EdgeInsets.only(top: 100, bottom: 30, right: 35, left: 35),
+            padding: const EdgeInsets.only(top: 100, bottom: 20, right: 35, left: 35),
             child: Stack(
               children: [
                 Column(
@@ -45,10 +46,9 @@ class _Login_2State extends State<Login_2> {
                               border: InputBorder.none,
                               filled: true,
                               fillColor: Colors.white,
-                              labelText: "example@example.com",
-                              labelStyle: TextStyle(fontSize: 14.0),
+                              hintText: "example@example.com",
                               hintStyle:
-                              TextStyle(color: Colors.grey, fontSize: 15.0)),
+                              TextStyle(color: Colors.grey, fontSize: 14.0)),
 
                           style: TextStyle(fontSize: 14.0),
                         ),
@@ -65,10 +65,9 @@ class _Login_2State extends State<Login_2> {
                               border: InputBorder.none,
                               filled: true,
                               fillColor: Colors.white,
-                              labelText: "Type Password here..",
-                              labelStyle: TextStyle(fontSize: 14.0),
+                              hintText: "Type Password here..",
                               hintStyle:
-                              TextStyle(color: Colors.grey, fontSize: 10.0)),
+                              TextStyle(color: Colors.grey, fontSize: 13.0)),
 
                           style: TextStyle(fontSize: 14.0),
                         ),
@@ -104,23 +103,30 @@ class _Login_2State extends State<Login_2> {
                             )),
                       ),
                     ) :
-                    Center(
-                      child: Container(
-                        width: 280,
-                        height: 60,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Two_Step_3()
 
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50.0),
-                            color: buttonPressBlueColor()
+                        ));
+                      },
+                      child: Center(
+                        child: Container(
+                          width: 280,
+                          height: 60,
+
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50.0),
+                              color: buttonPressBlueColor()
+                          ),
+                          child: Center(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              )),
                         ),
-                        child: Center(
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            )),
                       ),
                     ),
 

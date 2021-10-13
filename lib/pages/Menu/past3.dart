@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:spdy/pages/Menu/past5.dart';
 import 'package:spdy/pages/Widgets/button.dart';
 import 'package:spdy/pages/Widgets/colors.dart';
 import 'package:spdy/pages/Acc/acc1.dart';
@@ -71,7 +72,7 @@ class _Past_3State extends State<Past_3> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 30, right: 30, top: 110),
+                padding: const EdgeInsets.only(left: 30, right: 30, top: 110,bottom: 180),
                 child: Column(
                   children: [
 
@@ -96,20 +97,21 @@ class _Past_3State extends State<Past_3> {
                     ),
                     SizedBox(height: 20,),
 
-                    Container(
-                      height: 300,
-                      width: MediaQuery.of(context).size.width,
-                      child: GoogleMap(
-                        padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
-                        mapType: MapType.terrain,
-                        myLocationButtonEnabled: false,
-                        initialCameraPosition: _kGooglePlex,
-                        onMapCreated: (GoogleMapController controller) {
-                          _controller.complete(controller);
-                          newGoogleMapController = controller;
+                    Expanded(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        child: GoogleMap(
+                          padding: EdgeInsets.only(bottom: bottomPaddingOfMap),
+                          mapType: MapType.terrain,
+                          myLocationButtonEnabled: false,
+                          initialCameraPosition: _kGooglePlex,
+                          onMapCreated: (GoogleMapController controller) {
+                            _controller.complete(controller);
+                            newGoogleMapController = controller;
 
-                          locatePosition();
-                        },
+                            locatePosition();
+                          },
+                        ),
                       ),
                     ),
                     SizedBox(height: 20,),
@@ -120,6 +122,7 @@ class _Past_3State extends State<Past_3> {
                           _textColor = Colors.white;
                           _containerColor = buttonPressBlueColor();
                         });
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Past_5()));
                       },
                       child: Center(
                         child: Container(

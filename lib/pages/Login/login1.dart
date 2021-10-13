@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spdy/pages/Login/login2.dart';
+import 'package:spdy/pages/Registeration/register2.dart';
 import 'package:spdy/pages/Widgets/colors.dart';
 import 'package:spdy/pages/Acc/acc1.dart';
 
@@ -10,6 +12,12 @@ class Login_1 extends StatefulWidget {
 }
 
 class _Login_1State extends State<Login_1> {
+
+
+  Color loginColor = Colors.white;
+  Color registerColor = Colors.white;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +27,7 @@ class _Login_1State extends State<Login_1> {
           color: backgroundColor(),
           child:
           Padding(
-            padding: const EdgeInsets.only(top: 120, bottom: 50),
+            padding: const EdgeInsets.only(top: 120, bottom: 20),
             child: Stack(
               alignment: Alignment.center,
               children: [
@@ -37,17 +45,27 @@ class _Login_1State extends State<Login_1> {
                       height: 60,
 
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50.0),
-                          color: Colors.white
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: registerColor,
                       ),
-                      child: Center(
-                          child: Text(
-                            "Register",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          )),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            registerColor == Colors.white ?
+                            registerColor = buttonPressBlueColor():
+                            registerColor = Colors.white;
+                          });
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Register_2()));
+                        },
+                        child: Center(
+                            child: Text(
+                              "Register",
+                              style: TextStyle(
+                                  color: registerColor == buttonPressBlueColor()? Colors.white : Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            )),
+                      ),
                     ),
                     SizedBox(height: 30,),
                     Container(
@@ -56,17 +74,22 @@ class _Login_1State extends State<Login_1> {
 
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50.0),
-                          color: buttonPressBlueColor()
+                          color: loginColor,
                       ),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Acc_1()));
+                          setState(() {
+                            loginColor == Colors.white ?
+                            loginColor = buttonPressBlueColor():
+                            loginColor = Colors.white;
+                          });
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Login_2()));
                         },
                         child: Center(
                             child: Text(
                               "Login",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: loginColor == buttonPressBlueColor()? Colors.white : Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20),
                             )),

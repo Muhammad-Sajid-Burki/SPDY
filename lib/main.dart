@@ -37,10 +37,11 @@ import 'package:spdy/pages/Login/login1.dart';
 import 'package:spdy/pages/current/current0.dart';
 import 'package:spdy/pages/current/current1.dart';
 
+import 'extra.dart';
 import 'orderPay/orderpay1.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.dark
   ));
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: backgroundColor(),
       ),
       debugShowCheckedModeBanner: false,
-      home: OrderPay_2(),
+      home: SPDYMap(),
      
     );
   }
