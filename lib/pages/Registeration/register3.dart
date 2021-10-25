@@ -59,11 +59,10 @@ class _Register_3State extends State<Register_3> {
                               border: InputBorder.none,
                               filled: true,
                               fillColor: Colors.white,
-                              labelText: "123-456-7890",
-                              labelStyle: TextStyle(fontSize: 14.0),
+                              hintText: "123-456-7890",
                               hintStyle:
-                                  TextStyle(color: Colors.grey, fontSize: 15.0)),
-                          style: TextStyle(fontSize: 14.0),
+                                  TextStyle(color: Colors.grey, fontSize: 14.0)),
+                          style: TextStyle(fontSize: 18.0),
                         ),
                         SizedBox(
                           height: 10,
@@ -79,12 +78,11 @@ class _Register_3State extends State<Register_3> {
                               focusColor: Colors.black,
                               border: InputBorder.none,
                               filled: true,
+                              hintText: "example@example.com",
                               fillColor: Colors.white,
-                              labelText: "example@example.com",
-                              labelStyle: TextStyle(fontSize: 14.0),
                               hintStyle:
-                                  TextStyle(color: Colors.grey, fontSize: 10.0)),
-                          style: TextStyle(fontSize: 14.0),
+                                  TextStyle(color: Colors.grey, fontSize: 15.0)),
+                          style: TextStyle(fontSize: 18.0),
                         ),
                         SizedBox(
                           height: 10,
@@ -94,6 +92,9 @@ class _Register_3State extends State<Register_3> {
                           style: TextStyle(fontSize: 15, color: Colors.white),
                         ),
                         TextField(
+                          onChanged: (value) {
+
+                          },
                           controller: passEditingController,
                           obscureText: true,
                           keyboardType: TextInputType.visiblePassword,
@@ -102,11 +103,10 @@ class _Register_3State extends State<Register_3> {
                               border: InputBorder.none,
                               filled: true,
                               fillColor: Colors.white,
-                              labelText: "Type Password here..",
-                              labelStyle: TextStyle(fontSize: 14.0),
+                              hintText: "Type Password here..",
                               hintStyle:
-                                  TextStyle(color: Colors.grey, fontSize: 10.0)),
-                          style: TextStyle(fontSize: 14.0),
+                                  TextStyle(color: Colors.grey, fontSize: 15.0)),
+                          style: TextStyle(fontSize: 18.0),
                         ),
                         SizedBox(
                           height: 10,
@@ -124,11 +124,10 @@ class _Register_3State extends State<Register_3> {
                               border: InputBorder.none,
                               filled: true,
                               fillColor: Colors.white,
-                              labelText: "Type Password here..",
-                              labelStyle: TextStyle(fontSize: 14.0),
+                              hintText: "Type Password here..",
                               hintStyle:
-                                  TextStyle(color: Colors.grey, fontSize: 10.0)),
-                          style: TextStyle(fontSize: 14.0),
+                                  TextStyle(color: Colors.grey, fontSize: 15.0)),
+                          style: TextStyle(fontSize: 18.0),
                         ),
                       ],
                     ),
@@ -233,5 +232,23 @@ class _Register_3State extends State<Register_3> {
             ),
           )),
     );
+  }
+
+  bool validateStructure(String value){
+    String  pattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+    RegExp regExp = new RegExp(pattern);
+    return regExp.hasMatch(value);
+  }
+
+  validate(){
+    if(!validateStructure(passEditingController.text)){
+      setState(() {
+        _usernameError = emailError;
+        _passwordError = passwordError;
+      });
+      // show dialog/snackbar to get user attention.
+      return;
+    }
+    // Continue
   }
 }

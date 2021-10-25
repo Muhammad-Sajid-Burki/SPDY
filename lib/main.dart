@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:spdy/Map/map.dart';
+import 'package:spdy/Map/clientMap1.dart';
+import 'package:spdy/Map/clientMap4.dart';
 import 'package:spdy/orderPay/orderpay2.dart';
 import 'package:spdy/orderPay/payment_option2.dart';
 import 'package:spdy/pages/App/app1.dart';
@@ -37,13 +38,14 @@ import 'package:spdy/pages/Login/login1.dart';
 import 'package:spdy/pages/current/current0.dart';
 import 'package:spdy/pages/current/current1.dart';
 
+import 'Map/clientMap2.dart';
 import 'extra.dart';
 import 'orderPay/orderpay1.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
-        statusBarBrightness: Brightness.dark
+        statusBarBrightness: Brightness.light
   ));
   runApp(
       const MyApp());
@@ -60,7 +62,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: backgroundColor(),
       ),
       debugShowCheckedModeBanner: false,
-      home: SPDYMap(),
+      home: Register_3(),
      
     );
   }
